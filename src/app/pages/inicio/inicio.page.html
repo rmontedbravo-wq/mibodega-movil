@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="storefront-outline"></ion-icon>
+      MiBodega Móvil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Tarjeta 1: saludo con doble vía [(ngModel)] -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenida</ion-card-subtitle>
+      <ion-card-title>
+        @if (nombre.trim()) {
+          ¡Hola, {{ nombre }}!
+        } @else {
+          ¡Hola, bodeguero!
+        }
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input
+        label="Tu nombre"
+        labelPlacement="floating"
+        fill="outline"
+        placeholder="Escribe tu nombre"
+        [(ngModel)]="nombre">
+      </ion-input>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tarjeta 2: contador de clientes -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-icon name="people-outline"></ion-icon> Clientes atendidos hoy
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="contador">
+      <h1>{{ clientes }}</h1>
+      <div class="botones">
+        <ion-button fill="outline" [disabled]="clientes === 0" (click)="restar()">
+          <ion-icon slot="icon-only" name="remove"></ion-icon>
+        </ion-button>
+        <ion-button (click)="sumar()">
+          <ion-icon slot="start" name="add"></ion-icon>
+          Atender cliente
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tarjeta 3 (RETO 1): ventas del día -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-icon name="cash-outline"></ion-icon> Ventas del día
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="contador">
+      <h1>S/ {{ ventas }}</h1>
+      <div class="botones">
+        <ion-button color="tertiary" fill="outline" [disabled]="ventas === 0" (click)="restarVenta()">
+          −S/ 1
+        </ion-button>
+        <ion-button color="tertiary" (click)="sumarVenta()">
+          +S/ 1
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista con @for: plataformas a las que llega la app -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Un solo código, tres plataformas</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list lines="full">
+      @for (p of plataformas; track p.nombre) {
+        <ion-item>
+          <ion-icon slot="start" [name]="p.icono" color="secondary"></ion-icon>
+          <ion-label>
+            <h2>{{ p.nombre }}</h2>
+            <p>{{ p.descripcion }}</p>
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  </ion-card>
+
+</ion-content>

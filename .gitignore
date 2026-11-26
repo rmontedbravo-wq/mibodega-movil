@@ -1,0 +1,13 @@
+# Lo que Git NO debe "fotografiar"
+node_modules/
+www/
+.angular/
+dist/
+*.keystore
+*.jks
+.env
+.env.*
+.DS_Store
+Thumbs.db
+android/app/build/
+android/.gradle/

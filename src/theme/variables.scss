@@ -1,0 +1,36 @@
+// Colores de la marca MiBodega: violeta, turquesa, coral y amarillo.
+// Cambia --ion-color-primary y observa cómo cambia TODA la app.
+:root {
+  /* RETO 2: el primary original era violeta #5b2ee0 (rgb 91,46,224).
+     Lo cambiamos a turquesa oscuro para ver el efecto en toda la app. */
+  --ion-color-primary: #0f8b8d;
+  --ion-color-primary-rgb: 15, 139, 141;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #0d7a7c;
+  --ion-color-primary-tint: #279798;
+
+  /* Violeta (color original de la marca, ahora como secondary) */
+  --ion-color-secondary: #5b2ee0;
+  --ion-color-secondary-rgb: 91, 46, 224;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #5028c5;
+  --ion-color-secondary-tint: #6b43e3;
+
+  /* Coral */
+  --ion-color-tertiary: #ff6b5b;
+  --ion-color-tertiary-rgb: 255, 107, 91;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #e05e50;
+  --ion-color-tertiary-tint: #ff7a6b;
+
+  /* Amarillo */
+  --ion-color-warning: #ffc83d;
+  --ion-color-warning-rgb: 255, 200, 61;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0b036;
+  --ion-color-warning-tint: #ffce50;
+}

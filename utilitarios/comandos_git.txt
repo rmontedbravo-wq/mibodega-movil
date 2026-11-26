@@ -1,0 +1,17 @@
+CHULETA DE GIT - MiBodega Móvil
+git init                         -> crea el álbum en la carpeta
+git status                       -> qué cambió desde la última foto
+git add .                        -> prepara los cambios
+git commit -m "mensaje"          -> toma la foto
+git log --oneline                -> lista las fotos
+git remote add origin URL        -> conecta con GitHub
+git push -u origin main          -> sube las fotos
+git clone URL                    -> descarga un proyecto
+git pull                         -> trae lo nuevo
+
+Commits del reto (uno por cambio):
+git add src/app/pages/inicio
+git commit -m "Agrega tarjeta Ventas del día"
+git add src/theme/variables.scss
+git commit -m "Cambia color primario de la marca"
+git push
